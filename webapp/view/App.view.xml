@@ -1,0 +1,27 @@
+<mvc:View
+    controllerName="CT.cdstestapp.controller.App"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+	xmlns="sap.m"
+	xmlns:table="sap.ui.table.Table"
+	xmlns:smartTable="sap.ui.comp.smarttable"
+>
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="{i18n>title}">
+					<content>
+						<Button text="Press" press="onPress" type="Accept"></Button>
+
+					<smartTable:SmartTable id="LineItemsSmartTable" entitySet="zab_cds_filter" tableType="Table" initiallyVisibleFields="emp_id, emp_name" useExportToExcel="true" beforeExport="onBeforeExport" useVariantManagement="true" useTablePersonalisation="true" header="Line Items" showRowCount="true" persistencyKey="SmartTableAnalytical_Explored" enableAutoBinding="true" class="sapUiResponsiveContentPadding">
+				<!-- layout data used to make the table growing but the filter bar fixed -->
+						<smartTable:layoutData>
+							<FlexItemData growFactor="1" baseSize="0%"/>
+						</smartTable:layoutData>
+					</smartTable:SmartTable>
+					</content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>
